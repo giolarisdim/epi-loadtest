@@ -19,7 +19,7 @@ k6 run <parameters> <script_name>
 Example with using paramters:
 
 ```bash
- k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/test.json' -e PLA_BDNS=dryrun2.epi -e PLA_HOSTNAME=dryrun-quo4.pla.health pla_getLeaflets.js 
+ k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/test.json' -e PLA_BDNS=dryrun2.epi -e PLA_HOSTNAME='https://dryrun-quo4.pla.health' pla_getLeaflets.js 
 ```
 
 ### pla_getLeaflets
@@ -60,7 +60,7 @@ Test result are evaluated against a pre-defined tresholds. Statics metrics as pe
 | PLA_DEBUG | integer | 0 | Set to 1 to generate formatted url to standard output during test execution - can help with parameters debug |
 | PLA_RANDOM | integer | 0 | Set to 1 to ensure that data from data file are executed in the random order, otherwise only first item is used as parameter. |
 | PLA_BDNS | string | "" | BDNS domain value, that will be used to retrieve data. Example `dryrun2.epi` |
-| PLA_HOSTNAME | string | "" | Hostname of server hosting API_HUB, include port if needed. A TLS endpoint is estimated (https://).  Example: `dryrun-quo4.pla.health` |
+| PLA_HOSTNAME | string | "" | Hostname of server hosting API_HUB, provide including http/s specifier, please, include port if needed.   Example: `https://dryrun-quo4.pla.health` |
 
 ### Useful links
 
