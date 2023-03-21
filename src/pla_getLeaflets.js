@@ -70,7 +70,7 @@ export function getLeaflet() {
   const itemNum = __ENV.PLA_RANDOM == 1 ? Math.floor(Math.random() * data.length) : 0
   const randomParam = data[itemNum]
 
-  const url = new URL(`http://${__ENV.PLA_HOSTNAME}/leaflets/${__ENV.PLA_BDNS}`)
+  const url = new URL(`${__ENV.PLA_HOSTNAME}/leaflets/${__ENV.PLA_BDNS}`)
   url.searchParams.append('gtin', randomParam.gtin)
   url.searchParams.append('batch', randomParam.batch)
   url.searchParams.append('lang', randomParam.lang)
@@ -98,7 +98,7 @@ export function gtinOwner() {
   const itemNum = __ENV.PLA_RANDOM == 1 ? Math.floor(Math.random() * data.length) : 0
   const randomParam = data[itemNum]
 
-  const url = new URL(`http://${__ENV.PLA_HOSTNAME}/gtinOwner/${__ENV.PLA_BDNS}/${randomParam.gtin}`)
+  const url = new URL(`${__ENV.PLA_HOSTNAME}/gtinOwner/${__ENV.PLA_BDNS}/${randomParam.gtin}`)
   if (__ENV.PLA_DEBUG == 1) {
     console.log(`${url.toString()}`)
   }
