@@ -16,6 +16,16 @@ const data = new SharedArray('parameters', function () {
   const f = JSON.parse(open(inputPath))
   return f // f must be an array[]
 })
+// Load Headers
+if (typeof __ENV.PLA_HEADER_KEY !== 'undefined' || typeof __ENV.PLA_HEADER_VAL !== 'undefined') {
+  const params = {
+    headers: {
+      '__ENV.PLA_HEADER_KEY': '__ENV.PLA_HEADER_KEY',
+    },
+  }
+} else {
+  const params = {}
+}
 
 // create a final result report
 export function handleSummary(data) {
@@ -65,7 +75,7 @@ export const options = {
   thresholds: { 'http_req_duration{test_type:api}': ['p(95)<900', 'p(99)<1000'] },
 }
 
-export function getLeaflet() {
+export function getLeaflet(params) {
   //select random parameters set
   const itemNum = __ENV.PLA_RANDOM == 1 ? Math.floor(Math.random() * data.length) : 0
   const randomParam = data[itemNum]
@@ -81,7 +91,8 @@ export function getLeaflet() {
       `${randomParam.gtin}, ${randomParam.batch}, ${randomParam.lang}, ${randomParam.leaflet_type},${url.toString()}`
     )
   }
-  const response_1 = http.get(url.toString())
+
+  const response_1 = http.get(url.toString(), params)
   const checkRes_1 = check(response_1, {
     'getLeaflet: OK status 200': (r) => r.status === 200,
     'getLeaflet: OK req has body': (r) => r.body,
@@ -93,7 +104,7 @@ export function getLeaflet() {
   sleep(1)
 }
 
-export function gtinOwner() {
+export function gtinOwner(params) {
   //select random parameters set
   const itemNum = __ENV.PLA_RANDOM == 1 ? Math.floor(Math.random() * data.length) : 0
   const randomParam = data[itemNum]
@@ -102,7 +113,7 @@ export function gtinOwner() {
   if (__ENV.PLA_DEBUG == 1) {
     console.log(`${url.toString()}`)
   }
-  const response_2 = http.get(url.toString())
+  const response_2 = http.get(url.toString(), params)
   const checkRes_2 = check(response_2, {
     'gtinOwner: OK status 200': (r) => r.status === 200,
     'gtinOwner: OK req has body': (r) => r.body,
