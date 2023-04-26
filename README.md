@@ -16,11 +16,18 @@ Execute load test using following commands
 ```bash
 k6 run <parameters> <script_name>
 ```
-Example with using paramters:
+### Example with using parameters:
 
 ```bash
  k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/test.json' -e PLA_BDNS=dryrun2.epi -e PLA_HOSTNAME='https://dryrun-quo4.pla.health' pla_getLeaflets.js 
 ```
+
+### Example with using headers key :
+
+```bash
+ k6 run -e PLA_DATA='../data/leafletData_example.json'  -e PLA_BDNS='preqa.epi' -e PLA_HOSTNAME='https://pqnah2.pladev.com' -e PLA_HEADER_KEY='X-api-key' -e PLA_HEADER_VAL='AIzaSyDaGmWKa4JsXZ' pla_getLeaflets.js 
+```
+
 
 ### pla_getLeaflets
 
@@ -61,7 +68,8 @@ Test result are evaluated against a pre-defined tresholds. Statics metrics as pe
 | PLA_RANDOM | integer | 0 | Set to 1 to ensure that data from data file are executed in the random order, otherwise only first item is used as parameter. |
 | PLA_BDNS | string | "" | BDNS domain value, that will be used to retrieve data. Example `dryrun2.epi` |
 | PLA_HOSTNAME | string | "" | Hostname of server hosting API_HUB, provide including http/s specifier, please, include port if needed.   Example: `https://dryrun-quo4.pla.health` |
-
+| PLA_HEADER_KEY | string | "" | Name of header key to be send with the request.   Example: `X-api-key` |
+| PLA_HEADER_VAL | string | "" | Value of header to be send with the request.  Example: `IzaSyDaGmWKa4JsXZ` |
 ### Useful links
 
 - [https://k6.io/docs/get-started/running-k6/](https://k6.io/docs/get-started/running-k6/)
