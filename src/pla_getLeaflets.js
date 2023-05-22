@@ -51,8 +51,8 @@ export const options = {
       gracefulStop: '30s',
       stages: [
         { target: 20, duration: '1m' },
-        { target: 50, duration: '3m' },
-        { target: 0, duration: '3m' },
+       // { target: 50, duration: '3m' },
+       // { target: 0, duration: '3m' },
       ],
       gracefulRampDown: '30s',
       exec: 'gtinOwner',
@@ -64,8 +64,8 @@ export const options = {
       gracefulStop: '30s',
       stages: [
         { target: 20, duration: '1m' },
-        { target: 50, duration: '3m' },
-        { target: 0, duration: '3m' },
+       // { target: 50, duration: '3m' },
+       // { target: 0, duration: '3m' },
       ],
       gracefulRampDown: '30s',
       exec: 'getLeaflet',
