@@ -1,6 +1,5 @@
-[{"gtin": "07290931025651", "batch": "testbatch1", "lang": "en", "leaflet_type": "leaflet"},
-{"gtin": "07290931025651", "batch": "testbatch1", "lang": "de", "leaflet_type": "leaflet"},
-{"gtin": "07290931025651", "batch": "testbatch1", "lang": "fr", "leaflet_type": "leaflet"},
-{"gtin": "07290931025651", "batch": "testbatch1", "lang": "cz", "leaflet_type": "leaflet"}
+[{"gtin": "00642621026016", "batch": "REC1", "lang": "de", "leaflet_type": "leaflet"},
+{"gtin": "00642621026016", "batch": "REC1", "lang": "fr", "leaflet_type": "leaflet"},
+{"gtin": "00642621026016", "batch": "REC1", "lang": "cz", "leaflet_type": "leaflet"}
 ]
 
