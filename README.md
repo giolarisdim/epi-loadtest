@@ -16,7 +16,7 @@ Execute load test using following commands
 ```bash
 k6 run <parameters> <script_name>
 ```
-### Example with using parameters(Run while into src folder):
+### Example with using parameters:
 
 ```bash
  k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/test.json' -e PLA_BDNS=dryrun2.epi -e PLA_HOSTNAME='https://dryrun-quo4.pla.health' pla_getLeaflets.js 
@@ -27,7 +27,10 @@ k6 run <parameters> <script_name>
 ```bash
  k6 run -e PLA_DATA='../data/leafletData_example.json'  -e PLA_BDNS='preqa.epi' -e PLA_HOSTNAME='https://pqnah2.pladev.com' -e PLA_HEADER_KEY='X-api-key' -e PLA_HEADER_VAL='AIzaSyDaGmWKa4JsXZ' pla_getLeaflets.js 
 ```
-
+### Actual run executed while into src folder :
+```bash
+k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/leafletData_example.json' -e PLA_BDNS=dev.epi -e PLA_HOSTNAME='https://epidev.takeda.com' pla_getLeaflets.js
+```
 
 ### pla_getLeaflets
 
