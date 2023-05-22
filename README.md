@@ -16,7 +16,7 @@ Execute load test using following commands
 ```bash
 k6 run <parameters> <script_name>
 ```
-### Example with using parameters:
+### Example with using parameters(Run while into src folder):
 
 ```bash
  k6 run -e RANDOM=1 -e PLA_DEBUG=1 -e PLA_DATA='../data/test.json' -e PLA_BDNS=dryrun2.epi -e PLA_HOSTNAME='https://dryrun-quo4.pla.health' pla_getLeaflets.js 
